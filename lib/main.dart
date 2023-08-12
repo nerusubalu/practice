@@ -397,6 +397,7 @@ class _MyHomePageState extends State<MyHomePage> {
     final prefs = await SharedPreferences.getInstance();
     bool isLoggedIn = prefs.getBool('login') ?? false;
     if (isLoggedIn) {
+      // ignore: use_build_context_synchronously
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => const SecondRoute()),
@@ -426,7 +427,7 @@ class _MyHomePageState extends State<MyHomePage> {
               style: TextStyle(fontSize: 28),
             ),
             Container(
-              margin: EdgeInsets.all(10),
+              margin: const EdgeInsets.all(10),
               child: TextField(
                 controller: emailController,
                 decoration: const InputDecoration(
@@ -440,7 +441,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Container(
-              margin: EdgeInsets.all(10),
+              margin: const EdgeInsets.all(10),
               child: TextField(
                 controller: passwordController,
                 obscureText: _secureText,
